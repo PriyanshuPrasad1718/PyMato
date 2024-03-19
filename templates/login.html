@@ -1,0 +1,168 @@
+<html>
+{% load static %}
+<title>Login to for orders</title>
+<head>
+<style>
+body{
+	background-image:url("{%static 'maxresdefault.jpg'%}");
+	background-repeat: no-repeat;
+	background-size: cover;
+	 
+	
+}
+img{
+	position:relative;
+	bottom:10px;
+
+}
+#uname{
+	height:40px;
+	width:350px;
+	border: 2px solid black;
+	border-radius: 4px;
+	
+	position:relative;
+	top:10px;
+	
+	
+
+}
+
+
+#passw{
+	height:40px;
+	width:350px;
+	border: 2px solid black;
+	border-radius: 4px;
+	
+	position:relative;
+	top:30px;
+	
+	}
+	
+	
+button{
+	background-color:#7EDA0E;
+	height:40px;
+	width:80px;
+	border:0px;
+	
+	border-radius: 4px;
+	
+	position:relative;
+	top:70px;
+	right:155px;
+
+
+
+}
+
+#signup{
+
+	background-color:#0F72F1;
+	height:40px;
+	width:80px;
+	border:0px;
+	
+	border-radius: 4px;
+	
+	position:relative;
+	top:0px;
+	left:150px;
+	
+	
+
+
+
+}
+#username{
+	position:relative;
+	top:27px;
+	left:4px;
+
+
+}
+
+#passwrd{
+	position:relative;
+	top:45px;
+	left:4px;
+	
+	}
+	
+	
+fieldset{
+	width:500px;
+	border:1px solid #DCF668;
+	border-radius:20px;
+
+}
+
+#wmsg{
+	background-color:#DF7052;
+	position:relative;
+	bottom:10px;
+	
+		
+
+
+
+}
+
+</style>
+</head>
+<body>
+
+<center>
+<p id="wmsg">
+<font color="white" size=5px><b>
+{{wusr}}
+</b></font>
+</p>
+
+
+
+
+	<marquee width="60%" direction="left" height="100px">
+				<u><font color=F6FA06 size=5px>Order food online and get 50% off in first five orders.Hurry Up!!!!!!!!!</font></u>
+	</marquee><br><br>
+	
+	
+	
+	<fieldset>
+	<form action='/check' method='get'>
+	
+	
+	
+	
+
+	<img src="{%static 'username.jpg'%}" id="username"  width="40" height="40">
+	
+	  <input type="text" id="uname" name="usr" placeholder="E-mail address" required></input><br><br>
+	  <img src="{%static 'password.jpg'%}" id="passwrd" width="40" height="40">
+	  <input type="password" id="passw" name="pswd" placeholder="Password" required></input><br><br>
+	  
+	  <button type='submit' ><font color="white"><b>Login</b></font></button><br><br>
+	  
+	  
+	 
+
+	
+</form>
+
+<button id="signup" onClick='nextpage()'><font color="white"><b>Sign Up</b></font></button><br><br>
+<script>
+	function nextpage(){
+		document.location.href='signup';  
+	}
+	
+	
+</script>
+</fieldset>
+
+
+</center>
+
+</body>
+
+</html>

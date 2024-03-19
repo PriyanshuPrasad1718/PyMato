@@ -1,0 +1,89 @@
+<html>
+	<title>Cart</title>
+    <head>
+        <h1>Cart</h1>
+        <style>
+            table{
+                border:1px solid black;
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+            
+            
+            
+            }
+            
+            
+            
+            th{
+                color: aliceblue;
+                background-color: #4facfe;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+            tr:nth-child(odd) {
+                background-color: #f2f2f2;
+            }
+            td{
+                padding-top: 6px;
+            }
+            h2{
+                display: inline;
+            }
+            h3{
+                display: inline;
+            }
+            button{
+                position: relative;
+                left: 1200px;
+                font-size: larger;
+                padding: 8px;
+                padding-left: 17px;
+                padding-right: 17px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border: 2px solid  #4facfe ;
+                background-color: white;
+                color:  #4facfe;
+                border-radius: 10px;
+                transition-duration: 0.5s;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #4facfe;
+                color: white;
+            }
+            
+            </style>
+    </head>
+    <body>
+        <fieldset>
+            <center>
+            <table>
+            <tr>
+            <th>ITEMS ID</th>
+            <th>ITEMS</th>
+            <th>QUANTITY</th>
+            <th>RATE</th>
+            
+            </tr>
+                {% for dif_item in cart_lst %}
+                <tr>
+                {% for item_att in dif_item %}
+                <td><center>{{item_att}}</center></td>
+                {% endfor %}
+                </tr>
+                {% endfor %}
+                
+                
+                
+            </table>
+            </center>
+            </fieldset>
+        <h3>Your grand total is </h3> <h2><b>{{total}}</b></h2><br><br>
+        <form action="order">
+            <button>Order now</button>
+        </form>
+    </body>
+</html>

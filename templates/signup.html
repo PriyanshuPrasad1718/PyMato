@@ -1,0 +1,113 @@
+<html>
+	<title>sign-up</title>
+ <head>
+ <style>
+	input[type=text]{
+		height:30px;
+		width:300px;
+		position:relative;
+		left:200px;
+		bottom:40px;
+	
+	}
+	
+	input[type=password]{
+		height:30px;
+		width:300px;
+		position:relative;
+		left:200px;
+		bottom:40px;
+	
+	}
+	
+	button{
+		background-color:#57ABF5;
+		height:50px;
+		width:100px;
+		border:1px;
+		border-radius: 10px;
+	}
+	
+	
+	h1{
+		background-color:green;
+		}
+		
+	#msg{
+		
+		position:relative;
+		left:200px;
+		bottom:50px;
+		
+		
+		color: white;
+		animation-name: example;
+		animation-duration:5s;
+	}
+	@keyframes example {
+			from {color: red;}
+			to {color: red;}
+}
+	
+	
+	#msg2{
+		
+	
+		position:relative;
+		left:400px;
+		bottom:70px;
+		
+		color: white;
+		animation-name: example1;
+		animation-duration:5s;
+	
+	
+	}
+	@keyframes example1 {
+			from {color: red;}
+			to {color: red;}
+}
+	
+
+
+ </style>
+ </head>
+ <title>Sign Up</title>
+ <body>
+ <h1><font color='white' ><b>Sign-Up</b></font></h1>
+
+ <form action='/emailverfication' method='get'>
+	<p id='entity0'>Name</p><input type='text' name='name' placeholder='Enter your name' required></input><br><br>
+	<p id='entity2'>E-mail</p><input type='text' name='email' placeholder='Enter your E-mail' required></input>
+	<p id='msg'>
+	<font size=2px>
+	{{msger}}
+	</font>
+	</p>
+	<p id='entity1'>Phone no</p><input type='text' name='phno' placeholder='Enter your phone number' id="ent" maxlength=10 required></input><br><br>
+	<p id='entity1'>Address</p><input type='text' name='address' placeholder='Enter your full address' id="ent" required></input><br><br>
+	<p id='entity1'>Password</p><input type='password' name='password' placeholder='Create a Password' id="ent" required></input><br><br>
+	
+	<button type="submit" onclick="show()"><font color='white'><b>Sign up<b></font></button>
+	
+	
+
+	<p id='msg2'>
+	<font size=12px >
+	{{err}}
+	</font>
+	</p>
+	<p id='msg3'>
+	<font size=12px >
+	{{msger1}}
+	</font>
+	</p>
+ </form>
+ 
+ 
+ 
+ 
+ </body>
+ 
+
+</html>

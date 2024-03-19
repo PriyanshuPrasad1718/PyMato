@@ -1,0 +1,123 @@
+
+<html>
+    {% load static %}
+    <title>Profile</title>
+    <style>
+        html,body{
+            height:100%;
+            width: 100%;
+            padding:0px;
+            margin:0px;
+            overflow-x: hidden;
+            }
+        .top:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 270px;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to top, #00f2fe, #4facfe);
+        clip-path: circle(70% at 50% -160%);
+        }
+        .main{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+       
+    .content{
+        position:relative;
+        top: 450px;
+        left: 30px;
+        font-size: larger;
+        line-height: 50px;
+    }
+    h2{
+        color: #4facfe ;
+        display: inline;
+        letter-spacing: 1px;
+    }
+    h3{
+        display:inline;
+    }
+    h1{
+        position: relative;
+        left:600px;
+        bottom: 100px;
+
+    }
+    .box{
+        height: 250px;
+        width: 300px;
+        border-radius: 10px;
+        background-image: linear-gradient(to top, #00f2fe, #4facfe);
+        position: relative;
+        left: 900px;
+        top: 150px;
+        bottom: -500px;
+        box-shadow: 5px 5px 15px  #048ae4;
+    }       
+    .box-content:h4{
+        color: black;
+    } 
+    button{
+                font-size: larger;
+                padding: 8px;
+                padding-left: 17px;
+                padding-right: 17px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border: 2px solid   #048ae4 ;
+                background-color: cyan;
+                color:   #048ae4;
+                border-radius: 10px;
+                transition-duration: 0.5s;
+                cursor: pointer;
+            }
+    button:hover{
+            background-color: #048ae4;
+            color: white;
+            box-shadow:5px 5px 15px #048ae4;
+            } 
+        a{
+            position: relative;
+            top:200px;
+            left: 800px;
+        }
+     
+    </style>
+    <body>
+        <div class='top'>
+            <div class='main'>
+                               
+            </div>
+        </div>
+        <div class="content">
+            <h1>Profile</h1>
+            <h3><b>Your name is </b></h3> <h2><u><b>{{name}}</b></u></h2><br>
+            <h3><b>Your email is </b></h3> <h2><u><b>{{email}}</b></u></h2><br>
+            <h3><b>Your address is </b></h3> <h2><u><b>{{address}}</b></u></h2><br>
+            <h3><b>Your phone number is </b></h3> <h2><u><b>{{phone}}</b></u></h2><br>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <center><h3>History</h3></center>
+                <center><p>Watch your order history here!</p></center>
+                <center><p>You can not change history</p></center>
+                <center><p>This history is not shared with any third-party application</p></center><br>
+                <form action="order_history">
+                    <center><button>Order history</button></center>
+                </form>
+            </div>
+        </div>
+        <a href="changing">Want to change address ?</a>
+    </body>
+</html>

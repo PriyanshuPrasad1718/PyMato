@@ -1,0 +1,717 @@
+<html>
+{% load static %}
+<title>Order food</title>
+ <head>
+  <style>
+  
+    html,body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        margin-top:-10px;
+    }
+  .nav{
+        background-image: linear-gradient(to right bottom ,white , #00f2fe, #4facfe);
+        height: 80px;
+        width:100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .nav ul{
+        float: right;
+        position: relative;
+        right: 50px;
+        display: inline;
+        word-spacing: 30px;
+        padding-top: 8px;
+    }
+
+    .nav ul a{
+        text-decoration: none;
+        color: white;
+        letter-spacing: 8px;
+        padding-bottom: 8px;
+        font-weight: bold;
+        font-size: large;
+    }
+    .nav ul a:hover{
+        border-bottom: 3px solid white;
+    }
+    
+    label.head{
+        color: white;
+        font-size: 50px;
+        padding-left: 100px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        }
+		
+	#img2{
+		width:50px;
+		height:50px;
+		background-color:blue;
+	}
+	
+	
+	
+	#top_but{
+		background-color:white;
+		cursor: pointer;
+        transition-duration: 0.6s;
+	}
+    #top_but:hover{
+        border: 4px solid black;
+    }
+  
+  table{
+	position:relative;
+	bottom: 250px;
+    border-collapse: collapse;
+    }
+  
+  
+    th{
+        position: sticky;
+        top: 12px;
+		width:1000px;
+		height:50px;
+		border:1px collapse black;
+		border-collapse: collapse;
+        color: white;
+        background-color: #4facfe;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: larger;
+        text-align:center;
+    }
+   
+   td{
+		width:1000px;
+		height:150px;
+		border:1px collapse black;
+		border-collapse: collapse;
+        text-align:center;
+		}
+		
+		
+	img{
+		width: 90%;
+        height: 90%;
+        overflow: hidden;
+        transition-duration: 0.4s;
+	}
+	
+	
+	#qunt{
+		width:50px;
+	}
+    tr:hover{
+        background-color: #f1faf9;
+    }
+    img:hover{
+       transform: scale(1.25);
+        z-index: 1;
+        box-shadow:0px 25px 25px black;
+    }
+    h2{
+        position: relative;
+        top: 70px;
+    }
+	
+	#info{
+		position:relative;
+	
+		left:1000px;
+		top:50px;
+	
+	
+	}
+    
+    .middle{
+        background: url("{%static 'backgr.jpg'%}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0;
+
+    }
+    .extra{
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.4;
+        position: absolute;
+        padding: 0;
+
+    }
+
+    .name{
+        font-family: 'Pacifico' , cursive;
+        font-size: 100px;
+        color: white;
+        position: relative;
+        bottom: 400px;
+        padding: 0;
+
+        }       
+    
+    .desc p{
+        color: white;
+        position: relative;
+        bottom: 450px;
+        padding: 0;
+    }
+	.cart-button{
+        background: white;
+        height: 60px;
+        width: 40px;
+    }
+  </style>
+ </head>
+ <body>
+ <!--change-->
+	
+	<div id="info">
+	<font color='black'><b>
+	Hi, {{name}}
+	</b></font>
+	</div>
+	<!--<a href='http://127.0.0.1:8000/'><button id='top_but'><img src="{%static 'home.jpg'%}" id='img2' width="40" height="30"></button></a>
+	
+	<a href='profile'><button id='top_but'><img src="{%static 'profile.jpg'%}" id='img2' width="40" height="30"></button></a>
+    <a href="cart"><button id='top_but'><img src="{%static 'cart.jpg'%}" id='img2' width="40" height="30"></button></a><br><br>-->
+    <div class="nav">
+        <label class="head">Pymato</label>
+        <ul>
+            <a href="http://127.0.0.1:8000/">Home</a>
+            <a href="profile">Profile</a>
+            <a href="cart">Cart</a>
+        </ul>
+     </div>
+     <div class="middle">
+        <div class="extra"></div> 
+    </div>
+    <center>
+        <div class="desc">
+            <h1 class="name"><u>PYMATO</u></h1>
+            <p>Welcome to the <b>BEAUTIFULL</b> world of <b>FOOD</b></p>
+        </div>
+    </center>
+    
+    
+
+    
+    <center>
+        
+  <form>
+  <table>
+  <tr>
+   <th>Price</th>
+   <th>Name</th>
+   <th>Food</th>
+   <th>Add with Quantity</th>
+  
+ 
+
+  
+  
+ <tr>
+     <td>
+          ₹150
+      </td>
+      <td>
+            Chettinad Fish Fry
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'Chettinad Fish Fry.jpg'%}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add1' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+             
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+ <tr>
+     <td>
+          ₹80(2 pcs)
+      </td>
+      <td>
+           Dum Aloo Lakhnawi
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'Dum Aloo Lakhnawi.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add3' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+             
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹99
+      </td>
+      <td>
+          Keema Biryani
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Keema Biryani.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add4' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+         ₹46
+      </td>
+      <td>
+          Butter Chicken
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Butter Chicken.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add5' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+  <tr>
+   <td>
+        ₹120
+    </td>
+     <td>
+         Vegetable dalia
+     </td>
+     <td>
+        <center>
+            <img src="{%static 'dalia-recipe.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add6' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+
+  
+  
+ <tr>
+     <td>
+          ₹150
+      </td>
+      <td>
+           Upma
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'upma.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add7' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+ <tr>
+     <td>
+          ₹80(2 pcs)
+      </td>
+      <td>
+           ​Thepla
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Thepla.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add8' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹99
+      </td>
+      <td>
+          ​Sprouts salad
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Sprouts_salad.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add9' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+         ₹46
+      </td>
+      <td>
+          ​​Poha
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Poha.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add10' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+  
+  
+  <tr>
+   <td>
+        ₹150
+    </td>
+     <td>
+         Peas pulao
+     </td>
+     <td>
+          <center>
+                  <img src="{%static 'Peas_pulao.jpg' %}"></img>
+          </center>
+      </td>
+      <td>
+          <center>
+            <form action='add11' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+
+  
+  
+ <tr>
+     <td>
+          ₹90
+      </td>
+      <td>
+           Carrot raita
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'carrot_raita.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add12' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+ <tr>
+     <td>
+          ₹149
+      </td>
+      <td>
+          Moong dal khichdi
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Moong_dal_khichdi.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add13' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹88
+      </td>
+      <td>
+          ​Dal Fry
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'dal.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add14' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹156
+      </td>
+      <td>
+          Lemon rice
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Lemon rice.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add15' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+   <td>
+        ₹150
+    </td>
+     <td>
+         Baked Ragi Chakli 
+     </td>
+     <td>
+          <center>
+                  <img src="{%static 'Baked Ragi Chakli.jpg' %}"></img>
+          </center>
+      </td>
+      <td>
+          <center>
+            <form action='add16' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+
+  
+  
+ <tr>
+     <td>
+          ₹90
+      </td>
+      <td>
+           Bedmi Puri With Raseele Aloo
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'Bedmi Puri With Raseele Aloo.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add17' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+ <tr>
+     <td>
+          ₹149
+      </td>
+      <td>
+         Dahi Kebabs
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'Dahi Kebabs.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add18' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹88
+      </td>
+      <td>
+          Cashewnut And Cauliflower Pakoda
+      </td>
+      <td>
+           <center>
+                  <img src="{%static 'Cashewnut And Cauliflower Pakoda.jpg' %}"></img>
+           </center>
+      </td>
+      <td>
+          <center>
+            <form action='add19' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ <tr>
+     <td>
+          ₹156
+      </td>
+      <td>
+          Paneer Shashlik
+      </td>
+      <td>
+        <center>
+            <img src="{%static 'Paneer Shashlik.jpg' %}"></img>
+        </center>
+      </td>
+      <td>
+          <center>
+            <form action='add20' method='GET'>
+                <button>Add</button>  <input type='number' class='qunt' id='qunt' value=0 min='1' max='20' name='quan'>
+            </form>   
+            
+	    </center>
+      </td>
+   
+ </tr>
+ 
+ 
+ 
+  
+  
+  
+  
+  
+  </table>
+  </form>   
+  </center>
+  <h2>You can also visit to our customer care office situated at :</h2><br><br>
+  <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.0322493316576!2d88.43879609999999!3d22.9490394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f894fe4cfbbd23%3A0x7ffa8834c9abc54a!2sSatima%20Mistanna%20Bhandar!5e0!3m2!1sen!2sin!4v1607663618883!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0; position: relative; top: 70px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+ 
+
+ </body>
+
+ 
+ 
+ 
+ </script>
+ 
+ 
+</html>
